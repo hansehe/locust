@@ -37,8 +37,7 @@ Change or expose any of the environment variables in [src/.env](src/.env)
 
 ### Requirements
 ```
-pip install -r requirements.txt
-python setup.py
+pip install --upgrade DockerBuildManagement
 ```
 
 ### Run With Web UI
