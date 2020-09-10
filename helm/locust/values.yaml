@@ -9,6 +9,7 @@ image:
   pullPolicy: Always
 
 imagePullSecrets: []
+appVersionOverride: ""
 nameOverride: ""
 fullnameOverride: ""
 environmentVariables: {}
