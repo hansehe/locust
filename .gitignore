@@ -1,0 +1,14 @@
+**/.vs
+.vscode
+*/bin
+*/obj
+*.nupkg
+.idea
+__pycache__
+requirements.lock
+/helm/*/charts/*.tgz
+
+docker-compose.build.*.yml
+docker-compose.run.*.yml
+docker-compose.test.*.yml
+docker-compose.publish.*.yml

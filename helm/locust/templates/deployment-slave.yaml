@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "locust.fullname" . }}-slave
+  labels:
+    {{- include "locust.slave.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.slave.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "locust.slave.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "locust.slave.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "locust.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - "locust"
+          args:
+            - "-f"
+            - "{{ .Values.locustFile }}"
+            - "--slave"
+            - "--master-host={{ include "locust.fullname" . }}-master"
+            - "--master-port=5557"
+          resources:
+            {{- toYaml .Values.slave.resources | nindent 12 }}
+          env:
+          {{- range $key, $value := .Values.environmentVariables }}
+          - name: {{ $key }}
+            value: {{ $value }}
+          {{- end }}
+          {{- range $key, $value := .Values.slave.environmentVariables }}
+          - name: {{ $key }}
+            value: {{ $value }}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

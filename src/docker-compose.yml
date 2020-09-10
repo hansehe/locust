@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  locust-master:
+    image: hansehe/locust:${VERSION}
+    hostname: locust-master
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8089:8089"
+    environment:
+      TARGET_HOST: ${TARGET_HOST}
+    networks:
+        locust-nw:
+    entrypoint: locust -f locustfile.py --master
+
+  locust-slave:
+    image: hansehe/locust:${VERSION}
+    environment:
+      TARGET_HOST: ${TARGET_HOST}
+    networks:
+        locust-nw:
+    entrypoint: locust -f locustfile.py --slave --master-host=locust-master
+
+networks:
+    locust-nw:

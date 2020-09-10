@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  locust:
+    image: hansehe/locust:${VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      TARGET_HOST: ${TARGET_HOST}
+    entrypoint: locust -f locustfile.py --host ${TARGET_HOST} --no-web -c ${CONCURRENT_CLIENTS} -r ${HATCH_RATE} --run-time ${RUN_TIME} --stop-timeout ${STOP_TIMEOUT_SEC}

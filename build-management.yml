@@ -1,0 +1,46 @@
+changelog:
+    file: CHANGELOG.md
+    envKey: VERSION
+
+build:
+  selections:
+    service:
+      directory: src
+      additionalTag: latest
+      files:
+        - docker-compose.yml
+
+run:
+  selections:
+    service:
+      directory: src
+      files:
+        - docker-compose.yml
+
+
+test:
+  selections:
+    service:
+      directory: src
+      files:
+        - docker-compose.test.yml
+    helm:
+      directory: helm
+      cmd:
+        - helm template locust
+
+
+publish:
+  selections:
+    service:
+      directory: src
+      additionalTag: latest
+      files:
+        - docker-compose.yml
+    helm:
+      directory: helm
+      cmd: 
+        - helm template locust
+        - helm package locust --destination charts
+        - helm repo index ./charts
+
