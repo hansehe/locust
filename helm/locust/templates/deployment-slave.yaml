@@ -36,6 +36,9 @@ spec:
             - "--worker"
             - "--master-host={{ include "locust.fullname" . }}-master"
             - "--master-port=5557"
+            {{- range .Values.slave.extraArgs }}
+            - {{ . | quote }}
+            {{- end }}
           resources:
             {{- toYaml .Values.slave.resources | nindent 12 }}
           env:

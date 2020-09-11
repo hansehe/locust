@@ -16,6 +16,7 @@ locustFile: "locustfile.py"
 master:
   replicaCount: 1
   environmentVariables: {}
+  extraArgs: []
   resources: {}
     # limits:
     #   cpu: 100m
@@ -31,6 +32,7 @@ master:
 slave:
   replicaCount: 1
   environmentVariables: {}
+  extraArgs: []
   resources: {}
     # limits:
     #   cpu: 100m
