@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: 
+          - 3.8
+        docker_version:
+          - 19.09
+        docker_channel:
+          - stable
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: setup Docker
+        uses: docker-practice/actions-setup-docker@master
+        with:
+          docker_version: ${{ matrix.docker_version }}
+          docker_channel: ${{ matrix.docker_channel }}
+      - name: install helm
+        uses: azure/setup-helm@v1
+        id: install
+
+      - name: Install requirements
+        run: |
+          pip install DockerBuildManagement docker-compose
+
+      - name: Build and test
+        run: |
+          dbm -start -build -test
+
+      - name: Stop services
+        run: |
+          dbm -stop
+        if: ${{ always() }}
