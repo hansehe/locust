@@ -7,6 +7,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ENV TARGET_HOST=target-host.localhost
+ENV TARGET_HOST=https://target-host.localhost
 
 ENTRYPOINT locust -f locustfile.py

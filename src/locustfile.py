@@ -7,4 +7,4 @@ class ApiUser(HttpUser):
         ApiTasks: 1
     }
     wait_time = between(1, 5)
-    host = os.getenv('TARGET_HOST', 'target-host.localhost')
+    host = os.getenv('TARGET_HOST', 'https://target-host.localhost')
