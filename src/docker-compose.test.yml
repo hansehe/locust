@@ -8,4 +8,4 @@ services:
       dockerfile: Dockerfile
     environment:
       TARGET_HOST: ${TARGET_HOST}
-    entrypoint: locust -f locustfile.py --host ${TARGET_HOST} --no-web -c ${CONCURRENT_CLIENTS} -r ${HATCH_RATE} --run-time ${RUN_TIME} --stop-timeout ${STOP_TIMEOUT_SEC}
+    entrypoint: locust -f locustfile.py --host ${TARGET_HOST} --headless -u ${CONCURRENT_USERS} -r ${HATCH_RATE} --run-time ${RUN_TIME} --stop-timeout ${STOP_TIMEOUT_SEC}
