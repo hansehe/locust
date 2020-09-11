@@ -3,12 +3,12 @@ entries:
   locust:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-11T16:46:23.7845649+02:00"
+    created: "2020-09-11T17:02:29.8797694+02:00"
     description: Locust helm chart
-    digest: 616d1e7f9f604b32f5c3f9397a3b5a0daeb34f37729e4efecf31c3b7c386c599
+    digest: 32c0f08ddd84c06156735886f2c4a92f2953f2d796d11e26157d7bfb839f69b0
     name: locust
     type: application
     urls:
     - locust-0.1.0.tgz
     version: 0.1.0
-generated: "2020-09-11T16:46:23.7825603+02:00"
+generated: "2020-09-11T17:02:29.8767732+02:00"

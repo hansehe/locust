@@ -46,14 +46,6 @@ spec:
             - name: http-slave
               containerPort: 5557
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.master.resources | nindent 12 }}
           env:
