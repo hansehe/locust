@@ -33,7 +33,7 @@ spec:
           args:
             - "-f"
             - "{{ .Values.locustFile }}"
-            - "--slave"
+            - "--worker"
             - "--master-host={{ include "locust.fullname" . }}-master"
             - "--master-port=5557"
           resources:

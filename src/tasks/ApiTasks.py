@@ -1,7 +1,9 @@
-from locust import TaskSet, task
 import uuid
 import json
+
+from locust import TaskSet, task
 from requests import Response
+
 from tools import GeneralTools
 
 

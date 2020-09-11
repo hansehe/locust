@@ -21,7 +21,7 @@ services:
       TARGET_HOST: ${TARGET_HOST}
     networks:
         locust-nw:
-    entrypoint: locust -f locustfile.py --slave --master-host=locust-master
+    entrypoint: locust -f locustfile.py --worker --master-host=locust-master
 
 networks:
     locust-nw:
