@@ -2,18 +2,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "locust.fullname" . }}-slave
+  name: {{ include "locust.fullname" . }}-worker
   labels:
-    {{- include "locust.slave.labels" . | nindent 4 }}
+    {{- include "locust.worker.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.slave.replicaCount }}
+  replicas: {{ .Values.worker.replicaCount }}
   selector:
     matchLabels:
-      {{- include "locust.slave.selectorLabels" . | nindent 6 }}
+      {{- include "locust.worker.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "locust.slave.selectorLabels" . | nindent 8 }}
+        {{- include "locust.worker.selectorLabels" . | nindent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -36,17 +36,17 @@ spec:
             - "--worker"
             - "--master-host={{ include "locust.fullname" . }}-master"
             - "--master-port=5557"
-            {{- range .Values.slave.extraArgs }}
+            {{- range .Values.worker.extraArgs }}
             - {{ . | quote }}
             {{- end }}
           resources:
-            {{- toYaml .Values.slave.resources | nindent 12 }}
+            {{- toYaml .Values.worker.resources | nindent 12 }}
           env:
           {{- range $key, $value := .Values.environmentVariables }}
           - name: {{ $key }}
             value: {{ $value }}
           {{- end }}
-          {{- range $key, $value := .Values.slave.environmentVariables }}
+          {{- range $key, $value := .Values.worker.environmentVariables }}
           - name: {{ $key }}
             value: {{ $value }}
           {{- end }}

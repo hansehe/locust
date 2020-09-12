@@ -16,8 +16,8 @@ spec:
       protocol: TCP
       name: http
     - port: 5557
-      targetPort: http-slave
+      targetPort: http-worker
       protocol: TCP
-      name: http-slave
+      name: http-worker
   selector:
     {{- include "locust.master.selectorLabels" . | nindent 4 }}

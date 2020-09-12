@@ -29,7 +29,7 @@ master:
     maxReplicas: 1
     targetCPUUtilizationPercentage: 50
 
-slave:
+worker:
   replicaCount: 1
   environmentVariables: {}
   extraArgs: []

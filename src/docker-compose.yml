@@ -15,7 +15,7 @@ services:
         locust-nw:
     entrypoint: locust -f locustfile.py --master
 
-  locust-slave:
+  locust-worker:
     image: hansehe/locust:${VERSION}
     environment:
       TARGET_HOST: ${TARGET_HOST}

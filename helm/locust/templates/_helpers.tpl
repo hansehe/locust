@@ -60,11 +60,11 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
 {{/*
-Slave common labels
+worker common labels
 */}}
-{{- define "locust.slave.labels" -}}
+{{- define "locust.worker.labels" -}}
 helm.sh/chart: {{ include "locust.chart" . }}
-{{ include "locust.slave.selectorLabels" . }}
+{{ include "locust.worker.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -72,11 +72,11 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
 
 {{/*
-Slave selector labels
+worker selector labels
 */}}
-{{- define "locust.slave.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "locust.name" . }}-slave
-app.kubernetes.io/instance: {{ .Release.Name }}-slave
+{{- define "locust.worker.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "locust.name" . }}-worker
+app.kubernetes.io/instance: {{ .Release.Name }}-worker
 {{- end -}}
 
 {{/*

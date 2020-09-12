@@ -43,7 +43,7 @@ spec:
             - name: http
               containerPort: 8089
               protocol: TCP
-            - name: http-slave
+            - name: http-worker
               containerPort: 5557
               protocol: TCP
           resources:
