@@ -15,13 +15,19 @@ services:
         locust-nw:
     entrypoint: locust -f locustfile.py --master
 
-  locust-worker:
+  locust-worker-1: &default-locust-worker
     image: hansehe/locust:${VERSION}
     environment:
       TARGET_HOST: ${TARGET_HOST}
     networks:
         locust-nw:
     entrypoint: locust -f locustfile.py --worker --master-host=locust-master
+
+  locust-worker-2:
+    <<: *default-locust-worker
+
+  locust-worker-3:
+    <<: *default-locust-worker
 
 networks:
     locust-nw:

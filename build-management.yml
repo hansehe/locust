@@ -17,7 +17,6 @@ run:
       files:
         - docker-compose.yml
 
-
 test:
   selections:
     service:
@@ -28,7 +27,6 @@ test:
       directory: helm
       cmd:
         - helm template locust
-
 
 publish:
   selections:
