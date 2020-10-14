@@ -28,6 +28,9 @@ See official documentation:
 ```
 cd src/
 locust -f locustfile.py --no-web -c 10 -r 10 --run-time 1h30m --stop-timeout 99
+
+# or
+python main.py
 ```
 
 `-c` specifies the number of Locust clients to spawn, and `-r` specifies the hatch rate (number of clients to spawn per second).
