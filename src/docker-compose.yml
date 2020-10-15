@@ -13,7 +13,7 @@ services:
       TARGET_HOST: ${TARGET_HOST}
     networks:
         locust-nw:
-    entrypoint: locust -f locustfile.py --master
+    entrypoint: locust -f locustfile.py -u ${CONCURRENT_USERS} -r ${SPAWN_RATE} --master
 
   locust-worker-1: &default-locust-worker
     image: hansehe/locust:${VERSION}
