@@ -1,5 +1,7 @@
 # Load Testing With [Locust](https://locust.io/)
 
+[![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/locust)](https://artifacthub.io/packages/search?repo=locust)
+
 See locust docs:
 - https://docs.locust.io/en/stable/index.html
 
