@@ -1,6 +1,16 @@
 apiVersion: v2
 name: locust
 description: Locust helm chart
+home: https://github.com/hansehe/locust
+icon: https://raw.githubusercontent.com/hansehe/locust/master/helm/locust.png
+keywords:
+- locust
+- testing
+maintainers:
+- email: hans.erik.heggem@gmail.com
+  name: hansehe
+sources:
+- https://github.com/hansehe/locust
 
 # A chart can be either an 'application' or a 'library' chart.
 #
