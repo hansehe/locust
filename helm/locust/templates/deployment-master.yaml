@@ -51,11 +51,11 @@ spec:
           env:
           {{- range $key, $value := .Values.environmentVariables }}
           - name: {{ $key }}
-            value: {{ $value }}
+            value: {{ $value | quote }}
           {{- end }}
           {{- range $key, $value := .Values.master.environmentVariables }}
           - name: {{ $key }}
-            value: {{ $value }}
+            value: {{ $value | quote }}
           {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
