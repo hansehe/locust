@@ -17,6 +17,13 @@ master:
   replicaCount: 1
   environmentVariables: {}
   extraArgs: []
+    # - "-u"
+    # - "1"
+    # - "-r"
+    # - "1"
+    # - "--web-auth"
+    # - "admin:admin"
+    # - "--web-host=0.0.0.0"
   resources: {}
     # limits:
     #   cpu: 100m
@@ -25,6 +32,7 @@ master:
     #   cpu: 100m
     #   memory: 128Mi
   autoscaling:
+    enabled: false
     minReplicas: 1
     maxReplicas: 1
     targetCPUUtilizationPercentage: 50
@@ -41,6 +49,7 @@ worker:
     #   cpu: 100m
     #   memory: 128Mi
   autoscaling:
+    enabled: false
     minReplicas: 1
     maxReplicas: 1
     targetCPUUtilizationPercentage: 50
