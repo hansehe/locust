@@ -57,6 +57,10 @@ spec:
           - name: {{ $key }}
             value: {{ $value | quote }}
           {{- end }}
+           volumeMounts:
+          {{- if .Values.master.extraVolumeMounts }}
+            {{- toYaml .Values.master.extraVolumeMounts | nindent 12 }}
+          {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -69,3 +73,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+      volumes:
+      {{- if .Values.master.extraVolumes }}
+        {{ toYaml .Values.master.extraVolumes | nindent 8 }}
+      {{- end }}

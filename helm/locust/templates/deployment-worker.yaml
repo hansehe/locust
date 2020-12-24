@@ -50,6 +50,10 @@ spec:
           - name: {{ $key }}
             value: {{ $value | quote }}
           {{- end }}
+           volumeMounts:
+          {{- if .Values.worker.extraVolumeMounts }}
+            {{- toYaml .Values.worker.extraVolumeMounts | nindent 12 }}
+          {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -62,3 +66,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+      volumes:
+      {{- if .Values.worker.extraVolumes }}
+        {{ toYaml .Values.worker.extraVolumes | nindent 8 }}
+      {{- end }}
