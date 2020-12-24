@@ -62,12 +62,12 @@ worker:
     minReplicas: 1
     maxReplicas: 1
     targetCPUUtilizationPercentage: 50
-  extraVolumeMounts: []
-  ## Additional volumeMounts to the master container
+  volumeMounts: []
+  ## volumeMounts to the master container
   #  - name: locust-file
   #   mountPath: /locust
-  extraVolumes: []
-  ## Additional volumes to the master pod.
+  volumes: []
+  ## volumes for the master pod.
   #  - name: locust-file
   #    configMap:
   #      name: locust-file
