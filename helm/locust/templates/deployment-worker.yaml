@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 {{- $locustVerion := include "locust.version" . -}}
 apiVersion: apps/v1
 kind: Deployment
@@ -70,3 +71,4 @@ spec:
       volumes:
         {{ toYaml .Values.worker.volumes | nindent 8 }}
       {{- end }}
+{{- end }}

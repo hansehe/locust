@@ -3,7 +3,27 @@ entries:
   locust:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-12-27T17:09:57.6280019+01:00"
+    created: "2021-01-28T10:05:54.9254803+01:00"
+    description: Locust helm chart
+    digest: a66c2532b33c4202d053035954fffafe2ba20aee885fed0b006a2a357044cca8
+    home: https://github.com/hansehe/locust
+    icon: https://raw.githubusercontent.com/hansehe/locust/master/helm/locust.png
+    keywords:
+    - locust
+    - testing
+    maintainers:
+    - email: hans.erik.heggem@gmail.com
+      name: hansehe
+    name: locust
+    sources:
+    - https://github.com/hansehe/locust
+    type: application
+    urls:
+    - locust-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-01-28T10:05:54.9254803+01:00"
     description: Locust helm chart
     digest: 789185104ceddf00318229ca6d6b821a0c5cef6b2265ed031b6cdaad4551dedd
     home: https://github.com/hansehe/locust
@@ -23,7 +43,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-12-27T17:09:57.62633+01:00"
+    created: "2021-01-28T10:05:54.9188777+01:00"
     description: Locust helm chart
     digest: 02a9d9d05d165b7beea5a06fafcf9baf7107ff0147216ced89e8d228a46afe22
     home: https://github.com/hansehe/locust
@@ -41,4 +61,4 @@ entries:
     urls:
     - locust-0.1.0.tgz
     version: 0.1.0
-generated: "2020-12-27T17:09:57.6017844+01:00"
+generated: "2021-01-28T10:05:54.9117176+01:00"
