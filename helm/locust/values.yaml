@@ -18,6 +18,7 @@ locustFile: "locustfile.py"
 master:
   replicaCount: 1
   environmentVariables: {}
+  podAnnotations: {}
   extraArgs: []
     # - "-u"
     # - "1"
@@ -51,6 +52,7 @@ master:
 worker:
   replicaCount: 1
   environmentVariables: {}
+  podAnnotations: {}
   extraArgs: []
   resources: {}
     # limits:

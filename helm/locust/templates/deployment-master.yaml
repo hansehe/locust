@@ -7,7 +7,9 @@ metadata:
   labels:
     {{- include "locust.master.labels" . | nindent 4 }}
 spec:
+{{- if not .Values.master.autoscaling.enabled }}
   replicas: {{ .Values.master.replicaCount }}
+{{- end }}
   selector:
     matchLabels:
       {{- include "locust.master.selectorLabels" . | nindent 6 }}
@@ -15,6 +17,10 @@ spec:
     metadata:
       labels:
         {{- include "locust.master.selectorLabels" . | nindent 8 }}
+    {{- with .Values.master.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
