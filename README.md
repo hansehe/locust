@@ -13,7 +13,10 @@ helm install locust locust/locust --version 0.1.0
 
 ## Requirements
 ```
-pip install -r src/requirements.txt
+cd src/
+pip install poetry==1.7.1
+poetry install
+poetry shell
 ```
 
 ## Run

@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "tools"
+version = "0.1.0"
+description = "Locust"
+authors = ["Hans Erik Heggem <hans.erik.heggem@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+locust = "2.33.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

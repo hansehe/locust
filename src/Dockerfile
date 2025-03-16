@@ -1,9 +1,14 @@
-FROM python:3.8-buster
+FROM python:3.11-slim as dev
 
-WORKDIR /src
+WORKDIR /app
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install poetry==1.7.1
+
+COPY pyproject.toml poetry.lock ./
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-root
+
+FROM dev as final
 
 COPY . .
 

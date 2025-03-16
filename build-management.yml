@@ -6,7 +6,7 @@ build:
   selections:
     service:
       directory: src
-      additionalTag: latest
+      additionalTag: ${IMAGE_TAG:-latest}
       files:
         - docker-compose.yml
 
@@ -32,7 +32,10 @@ publish:
   selections:
     service:
       directory: src
-      additionalTag: latest
+      additionalTag: ${IMAGE_TAG:-latest}
+      platforms:
+        - linux/amd64
+        - linux/arm64
       files:
         - docker-compose.yml
     helm:
