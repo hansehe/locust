@@ -3,9 +3,9 @@ entries:
   locust:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2025-03-16T02:21:06.0026128+01:00"
+    created: "2025-03-16T02:55:24.4987233+01:00"
     description: Locust helm chart
-    digest: 9fdb114f784aeb56626cc0850433cc2194a6990fbcbc9e956d5a5f088e1507f5
+    digest: 144e71895e089f88da684dd44d9a2ea8138f9441f65c81c9bfc672c0d9fdf658
     home: https://github.com/hansehe/locust
     icon: https://raw.githubusercontent.com/hansehe/locust/master/helm/locust.png
     keywords:
@@ -23,7 +23,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-16T02:21:06.0020766+01:00"
+    created: "2025-03-16T02:55:24.4981485+01:00"
     description: Locust helm chart
     digest: df639793f1023e478bf772de6188c86fc9d82eed7b982249f3606dfccfa770a4
     home: https://github.com/hansehe/locust
@@ -43,7 +43,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-16T02:21:06.0015433+01:00"
+    created: "2025-03-16T02:55:24.4981485+01:00"
     description: Locust helm chart
     digest: a66c2532b33c4202d053035954fffafe2ba20aee885fed0b006a2a357044cca8
     home: https://github.com/hansehe/locust
@@ -63,7 +63,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-16T02:21:06.0010311+01:00"
+    created: "2025-03-16T02:55:24.4976378+01:00"
     description: Locust helm chart
     digest: 789185104ceddf00318229ca6d6b821a0c5cef6b2265ed031b6cdaad4551dedd
     home: https://github.com/hansehe/locust
@@ -83,7 +83,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-16T02:21:06.0005123+01:00"
+    created: "2025-03-16T02:55:24.4970955+01:00"
     description: Locust helm chart
     digest: 02a9d9d05d165b7beea5a06fafcf9baf7107ff0147216ced89e8d228a46afe22
     home: https://github.com/hansehe/locust
@@ -101,4 +101,4 @@ entries:
     urls:
     - locust-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-16T02:21:05.9993795+01:00"
+generated: "2025-03-16T02:55:24.4965488+01:00"
